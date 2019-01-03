@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qny-Oh-vK5">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Monster Hunter Weapon Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MonsterHunterWeaponController" customModule="Pursuit_Core_iOS_Unit3_Holiday_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T7t-kL-phx">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mhWeaponCell" rowHeight="110" id="HTT-Ct-gzC" customClass="MonsterHunterWeaponCell" customModule="Pursuit_Core_iOS_Unit3_Holiday_Assignment" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="110"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HTT-Ct-gzC" id="D6J-xY-CZF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109.66666666666667"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JUW-BE-nhc">
+                                                    <rect key="frame" x="15" y="11" width="88" height="88"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="JUW-BE-nhc" secondAttribute="height" multiplier="1:1" id="jxX-Eq-YdH"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weapon Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSB-5y-Dzb">
+                                                    <rect key="frame" x="125" y="44" width="224" height="24.333333333333329"/>
+                                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZSB-5y-Dzb" firstAttribute="leading" secondItem="JUW-BE-nhc" secondAttribute="trailing" constant="22" id="2Y2-da-BWI"/>
+                                                <constraint firstItem="ZSB-5y-Dzb" firstAttribute="top" secondItem="D6J-xY-CZF" secondAttribute="topMargin" constant="33" id="3V1-J5-g0n"/>
+                                                <constraint firstItem="JUW-BE-nhc" firstAttribute="top" secondItem="D6J-xY-CZF" secondAttribute="topMargin" id="NJE-Cw-8hg"/>
+                                                <constraint firstItem="JUW-BE-nhc" firstAttribute="leading" secondItem="D6J-xY-CZF" secondAttribute="leadingMargin" id="SNR-qa-zqq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="JUW-BE-nhc" secondAttribute="bottom" id="Y5y-5T-fTI"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ZSB-5y-Dzb" secondAttribute="trailing" constant="11" id="ywb-hf-qRh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.77994920379999999" green="0.77996574240000005" blue="0.79907598349999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="mhWeaponImage" destination="JUW-BE-nhc" id="HbC-U8-cGj"/>
+                                            <outlet property="mhWeaponName" destination="ZSB-5y-Dzb" id="Lt9-bP-Tvu"/>
+                                            <segue destination="Vlp-is-ORS" kind="show" id="SX1-60-nav"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="T7t-kL-phx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3SG-21-MiL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="T7t-kL-phx" secondAttribute="trailing" id="feY-7S-IuZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="T7t-kL-phx" secondAttribute="bottom" id="jF6-Nc-XNs"/>
+                            <constraint firstItem="T7t-kL-phx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mbg-mw-Q6l"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1Xi-KD-plb"/>
+                    <connections>
+                        <outlet property="mhWeaponTableView" destination="T7t-kL-phx" id="PzQ-hc-Ex2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="733.60000000000002" y="3.6945812807881775"/>
+        </scene>
+        <!--Monster Hunter Weapons Detail View Controller-->
+        <scene sceneID="OyQ-Yw-lzb">
+            <objects>
+                <viewController id="Vlp-is-ORS" customClass="MonsterHunterWeaponsDetailViewController" customModule="Pursuit_Core_iOS_Unit3_Holiday_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2KK-ZH-yxL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0wg-yX-838">
+                                <rect key="frame" x="33" y="120.99999999999999" width="309" height="231.66666666666663"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0wg-yX-838" secondAttribute="height" multiplier="4:3" id="biY-no-ff2"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weapon Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eF-gM-8xp">
+                                <rect key="frame" x="11" y="374.66666666666669" width="353" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Damage Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HK3-ux-1Gg">
+                                <rect key="frame" x="11" y="416.66666666666669" width="353" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weapon Damage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hrs-Yx-UWN">
+                                <rect key="frame" x="11" y="459.66666666666669" width="353" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hrs-Yx-UWN" firstAttribute="top" secondItem="HK3-ux-1Gg" secondAttribute="bottom" constant="22" id="4Jp-H1-sYi"/>
+                            <constraint firstItem="3eF-gM-8xp" firstAttribute="leading" secondItem="l4a-fB-PNa" secondAttribute="leading" constant="11" id="6On-gW-u57"/>
+                            <constraint firstItem="l4a-fB-PNa" firstAttribute="trailing" secondItem="3eF-gM-8xp" secondAttribute="trailing" constant="11" id="NCZ-Hn-z0k"/>
+                            <constraint firstItem="0wg-yX-838" firstAttribute="leading" secondItem="l4a-fB-PNa" secondAttribute="leading" constant="33" id="W2N-73-CM8"/>
+                            <constraint firstItem="Hrs-Yx-UWN" firstAttribute="leading" secondItem="l4a-fB-PNa" secondAttribute="leading" constant="11" id="Xav-vX-9Yf"/>
+                            <constraint firstItem="l4a-fB-PNa" firstAttribute="trailing" secondItem="0wg-yX-838" secondAttribute="trailing" constant="33" id="Xb5-sL-HZL"/>
+                            <constraint firstItem="l4a-fB-PNa" firstAttribute="trailing" secondItem="HK3-ux-1Gg" secondAttribute="trailing" constant="11" id="e0Q-Ri-nrv"/>
+                            <constraint firstItem="HK3-ux-1Gg" firstAttribute="top" secondItem="3eF-gM-8xp" secondAttribute="bottom" constant="22" id="euO-Gv-k1P"/>
+                            <constraint firstItem="3eF-gM-8xp" firstAttribute="top" secondItem="0wg-yX-838" secondAttribute="bottom" constant="22" id="f3d-mR-CgR"/>
+                            <constraint firstItem="HK3-ux-1Gg" firstAttribute="leading" secondItem="l4a-fB-PNa" secondAttribute="leading" constant="11" id="h23-0l-0YY"/>
+                            <constraint firstItem="0wg-yX-838" firstAttribute="top" secondItem="l4a-fB-PNa" secondAttribute="top" constant="33" id="oGN-lk-vtH"/>
+                            <constraint firstItem="l4a-fB-PNa" firstAttribute="trailing" secondItem="Hrs-Yx-UWN" secondAttribute="trailing" constant="11" id="t3c-P9-gbK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="l4a-fB-PNa"/>
+                    </view>
+                    <connections>
+                        <outlet property="weaponDamage" destination="Hrs-Yx-UWN" id="FfO-sj-EiN"/>
+                        <outlet property="weaponImage" destination="0wg-yX-838" id="EIm-2y-pfa"/>
+                        <outlet property="weaponName" destination="3eF-gM-8xp" id="YIe-lF-Tr7"/>
+                        <outlet property="weaponType" destination="HK3-ux-1Gg" id="ZrU-2k-oMu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9yA-SD-Dvh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1589.5999999999999" y="4.4334975369458132"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ab7-FZ-ja2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qny-Oh-vK5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FMC-7U-3Fz">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4IV-gC-4og"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NUe-Gv-KZg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-138.40000000000001" y="3.6945812807881775"/>
+        </scene>
+    </scenes>
+</document>
