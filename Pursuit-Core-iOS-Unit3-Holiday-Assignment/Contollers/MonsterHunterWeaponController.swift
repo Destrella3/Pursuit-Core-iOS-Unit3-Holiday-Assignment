@@ -11,23 +11,28 @@ class MonsterHunterWeaponController: UIViewController {
     }
     
     @IBOutlet weak var mhWeaponTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mhWeaponTableView.layer.borderWidth = 2.0
-        title = "Monster Hunter Weapon List"
+        searchBar.delegate = self
         mhWeaponTableView.dataSource = self
-        MonsterHunterWeaponsAPIClient.getAllWeapons { (weapon, error) in
-            if let weapon = weapon {
-                self.monsterHunterWeapons = weapon
-            }
-            if let error = error {
-                print(error)
-            }
-        }
+        loadData()
     }
-    
+    func loadData() {
+        MonsterHunterWeaponsAPIClient.getAllWeapons { (weapon, error) in
+    if let weapon = weapon {
+    self.monsterHunterWeapons = weapon
+    }
+    if let error = error {
+    print(error)
+    }
+}
+    mhWeaponTableView.layer.borderWidth = 2.0
+    title = "Monster Hunter Weapon List"
+}
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? MonsterHunterWeaponsDetailViewController,
             let cellSelected = mhWeaponTableView.indexPathForSelectedRow else { return }
@@ -56,4 +61,13 @@ extension MonsterHunterWeaponController: UITableViewDataSource {
         return cell
     }
     
+}
+extension MonsterHunterWeaponController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        guard let searchText = searchBar.text,
+        !searchText.isEmpty,
+            let searchTextEncoded = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return loadData()}
+    monsterHunterWeapons = monsterHunterWeapons.filter{$0.name.contains(searchTextEncoded.capitalized)}
+    }
 }
