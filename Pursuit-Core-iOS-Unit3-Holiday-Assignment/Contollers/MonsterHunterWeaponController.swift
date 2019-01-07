@@ -18,6 +18,7 @@ class MonsterHunterWeaponController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        mhWeaponTableView.delegate = self
         mhWeaponTableView.dataSource = self
         loadData()
     }
@@ -58,11 +59,18 @@ extension MonsterHunterWeaponController: UITableViewDataSource {
             print("Error: \(error)")
         }
         cell.mhWeaponName.text = weaponToSet.name
+        cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.borderWidth = 2
         return cell
     }
-    
 }
+
+extension MonsterHunterWeaponController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+}
+
 extension MonsterHunterWeaponController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
@@ -72,3 +80,4 @@ extension MonsterHunterWeaponController: UISearchBarDelegate {
         monsterHunterWeapons = monsterHunterWeapons.filter{$0.name.contains(searchTextEncoded.capitalized)}
     }
 }
+
