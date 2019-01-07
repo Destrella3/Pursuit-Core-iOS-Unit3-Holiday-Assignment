@@ -22,6 +22,7 @@ class MonsterHunterWeaponController: UIViewController {
         mhWeaponTableView.dataSource = self
         loadData()
     }
+    
     func loadData() {
         mhWeaponTableView.layer.borderWidth = 2.0
         title = "Monster Hunter World Weapon List"
@@ -61,6 +62,14 @@ extension MonsterHunterWeaponController: UITableViewDataSource {
         cell.mhWeaponName.text = weaponToSet.name
         cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.borderWidth = 2
+        cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
+        UIView.animate(withDuration: 0.2, animations: {
+            cell.layer.transform = CATransform3DMakeScale(1.05,1.05,1)
+        },completion: { finished in
+            UIView.animate(withDuration: 0.1, animations: {
+                cell.layer.transform = CATransform3DMakeScale(1,1,1)
+            })
+        })
         return cell
     }
 }

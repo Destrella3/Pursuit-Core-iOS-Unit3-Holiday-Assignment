@@ -1,7 +1,7 @@
 import UIKit
 
 class MonsterHunterWeaponsDetailViewController: UIViewController {
-
+    
     var mhWeapon: MonsterHunterWeapon!
     
     @IBOutlet weak var weaponImage: UIImageView!
@@ -29,6 +29,6 @@ class MonsterHunterWeaponsDetailViewController: UIViewController {
         }
         self.weaponImage.layer.cornerRadius = self.weaponImage.frame.size.width / 2
         self.weaponImage.clipsToBounds = true
-        self.weaponImage.layer.borderWidth = 3
+        self.weaponImage.layer.borderWidth = 5
     }
 }
