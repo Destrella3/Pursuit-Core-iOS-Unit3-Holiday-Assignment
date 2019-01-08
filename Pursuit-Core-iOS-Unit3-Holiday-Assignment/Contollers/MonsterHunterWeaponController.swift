@@ -62,6 +62,7 @@ extension MonsterHunterWeaponController: UITableViewDataSource {
         cell.mhWeaponName.text = weaponToSet.name
         cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.borderWidth = 2
+        // Credit: https://stackoverflow.com/questions/27817932/tableviewcell-animation-in-swift
         cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
         UIView.animate(withDuration: 0.2, animations: {
             cell.layer.transform = CATransform3DMakeScale(1.05,1.05,1)
@@ -70,6 +71,7 @@ extension MonsterHunterWeaponController: UITableViewDataSource {
                 cell.layer.transform = CATransform3DMakeScale(1,1,1)
             })
         })
+        //
         return cell
     }
 }
@@ -85,8 +87,8 @@ extension MonsterHunterWeaponController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         guard let searchText = searchBar.text,
             !searchText.isEmpty,
-            let searchTextEncoded = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return loadData()}
-        monsterHunterWeapons = monsterHunterWeapons.filter{$0.name.contains(searchTextEncoded.capitalized)}
+            let searchTextEncoded = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return loadData() }
+        monsterHunterWeapons = monsterHunterWeapons.filter{ $0.name.contains(searchTextEncoded.capitalized) }
     }
 }
 
